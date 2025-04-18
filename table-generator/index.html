@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Generator</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Table Generator</h1>
+            <p>Create beautiful HTML tables with custom styling</p>
+        </div>
+
+        <div class="content">
+            <div class="card">
+                <h2>Table Properties</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="rows">Rows</label>
+                        <input type="number" id="rows" min="1" max="20" value="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="columns">Columns</label>
+                        <input type="number" id="columns" min="1" max="10" value="3">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="header" checked>
+                        <label for="header">Include header row</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="border-style">Border Style</label>
+                    <select id="border-style">
+                        <option value="solid">Solid</option>
+                        <option value="dashed">Dashed</option>
+                        <option value="dotted">Dotted</option>
+                        <option value="double">Double</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="border-width">Border Width (px)</label>
+                        <input type="number" id="border-width" min="0" max="10" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="cell-padding">Cell Padding (px)</label>
+                        <input type="number" id="cell-padding" min="0" max="20" value="8">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Colors</label>
+                    <div class="form-row">
+                        <div class="form-group color-input-group">
+                            <label for="header-bg">Header</label>
+                            <input type="color" id="header-bg" class="color-picker" value="#f2f2f2">
+                        </div>
+                        <div class="form-group color-input-group">
+                            <label for="border-color">Border</label>
+                            <input type="color" id="border-color" class="color-picker" value="#dddddd">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group color-input-group">
+                            <label for="even-row-bg">Even Rows</label>
+                            <input type="color" id="even-row-bg" class="color-picker" value="#ffffff">
+                        </div>
+                        <div class="form-group color-input-group">
+                            <label for="odd-row-bg">Odd Rows</label>
+                            <input type="color" id="odd-row-bg" class="color-picker" value="#f9f9f9">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="text-align">Text Alignment</label>
+                    <select id="text-align">
+                        <option value="left">Left</option>
+                        <option value="center">Center</option>
+                        <option value="right">Right</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="generate-btn">Generate Table</button>
+                    <button id="reset-btn" class="button-secondary">Reset</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Table Preview</h2>
+                <div class="table-preview" id="table-preview">
+                    <!-- Table will be generated here -->
+                </div>
+
+                <div class="code-output">
+                    <h3>HTML Code:</h3>
+                    <div class="code-container" id="html-code">
+                        <!-- Generated HTML code will appear here -->
+                    </div>
+                    <button class="copy-button" id="copy-html-btn">Copy HTML</button>
+                </div>
+
+                <div class="code-output">
+                    <h3>CSS Code:</h3>
+                    <div class="code-container" id="css-code">
+                        <!-- Generated CSS code will appear here -->
+                    </div>
+                    <button class="copy-button" id="copy-css-btn">Copy CSS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="app.js"></script>
+</body>
+</html>
