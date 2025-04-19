@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #334155;
+}
+
+.grocery-app {
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 550px;
+    overflow: hidden;
+    position: relative;
+}
+
+.header {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    padding: 35px 30px 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.content {
+    margin-top: -70px;
+    position: relative;
+    z-index: 3;
+    padding: 0 20px;
+}
+
+.add-item-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.add-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-item input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s;
+    outline: none;
+    background-color: #f8fafc;
+}
+
+.add-item input:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+    background-color: white;
+}
+
+.add-item button {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-item button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+.add-item button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.list-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 5px 0;
+    margin-bottom: 20px;
+}
+
+.list-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.list-header span {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.grocery-list {
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+.grocery-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.grocery-item:hover {
+    background-color: #f8fafc;
+}
+
+.grocery-item label {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+    font-size: 16px;
+    color: #334155;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.grocery-item input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-custom {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    margin-right: 15px;
+    position: relative;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grocery-item input[type="checkbox"]:checked + .checkbox-custom {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-color: transparent;
+}
+
+.checkbox-custom svg {
+    width: 14px;
+    height: 14px;
+    color: white;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.grocery-item input[type="checkbox"]:checked + .checkbox-custom svg {
+    opacity: 1;
+}
+
+.grocery-item input[type="checkbox"]:checked ~ span.item-text {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.grocery-item:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn svg {
+    width: 18px;
+    height: 18px;
+    color: #94a3b8;
+    transition: all 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #fee2e2;
+}
+
+.delete-btn:hover svg {
+    color: #dc2626;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #8b5cf6;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.clear-btn:hover {
+    background-color: #f5f3ff;
+}
+
+.empty-list {
+    text-align: center;
+    padding: 30px 0;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grocery-item {
+    animation: fadeIn 0.5s ease;
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 25px 20px 90px;
+    }
+    
+    .header h1 {
+        font-size: 28px;
+    }
+    
+    .content {
+        margin-top: -60px;
+    }
+    
+    .add-item input {
+        padding: 12px 15px;
+    }
+    
+    .add-item button {
+        padding: 12px;
+    }
+}

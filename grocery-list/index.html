@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="grocery-app">
+        <div class="header">
+            <div class="header-content">
+                <h1>Grocery List</h1>
+                <p>Keep track of your shopping items</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="add-item-container">
+                <div class="add-item">
+                    <input type="text" id="new-item" placeholder="Add a grocery item...">
+                    <button onclick="addItem()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="list-container">
+                <div class="list-header">
+                    <h2>Your Items</h2>
+                    <span id="items-count"> items</span>
+                </div>
+                <ul class="grocery-list" id="grocery-list">
+                  
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <span id="items-left">5 items left</span>
+            <button class="clear-btn" onclick="clearCompleted()">Clear completed</button>
+        </div>
+    </div>
+
+    <script src="app.js"> </script>
+</body>
+</html>
+<!-- made by kamran for contect kamranikram706@gmail.com -->
