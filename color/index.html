@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Color Changer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Color <span class="highlight">Changer</span></h1>
+        
+        <div class="color-display">
+            <div class="color-box" id="colorBox">
+                <div class="pulse-animation"></div>
+            </div>
+            <p class="color-value" id="colorValue">#3498db</p>
+        </div>
+        
+        <div class="controls">
+            <div class="color-options">
+                <button class="color-btn" data-color="#3498db" style="background-color: #3498db;"></button>
+                <button class="color-btn" data-color="#e74c3c" style="background-color: #e74c3c;"></button>
+                <button class="color-btn" data-color="#2ecc71" style="background-color: #2ecc71;"></button>
+                <button class="color-btn" data-color="#f39c12" style="background-color: #f39c12;"></button>
+                <button class="color-btn" data-color="#9b59b6" style="background-color: #9b59b6;"></button>
+            </div>
+            
+            <div class="custom-color">
+                <input type="color" id="colorPicker" value="#3498db">
+                <button id="applyColor">Apply Color</button>
+            </div>
+            
+            <div class="animation-controls">
+                <h3>Animation Style</h3>
+                <div class="animation-options">
+                    <button class="animation-btn active" data-animation="pulse">Pulse</button>
+                    <button class="animation-btn" data-animation="rotate">Rotate</button>
+                    <button class="animation-btn" data-animation="bounce">Bounce</button>
+                    <button class="animation-btn" data-animation="none">None</button>
+                </div>
+            </div>
+            
+            <button id="randomColor" class="random-btn">Random Color</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
